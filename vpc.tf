@@ -43,7 +43,7 @@ resource "aws_route" "local" {
     gateway_id = "local"
 }
 
-resource "aws_vpc_endpoint "s3" {
+resource "aws_vpc_endpoint" "s3" {
     vpc_id = aws_vpc.tf_vpc.id
     vpc_endpoint_type="Gateway"
     service_name="com.amazonaws.us-east-2.s3"
