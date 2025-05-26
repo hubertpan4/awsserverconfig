@@ -33,7 +33,7 @@ resource "aws_route" "internet_ip4" {
 
 resource "aws_route" "internet_ip6" {
     route_table_id =  aws_route_table.tf_rt_tbl.id
-    destination_cidr_block = "::/0"
+    destination_ipv6_cidr_block = "::/0"
     gateway_id = aws_internet_gateway.tf_vpc_gw.id
 }
 
