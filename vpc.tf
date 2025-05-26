@@ -39,7 +39,7 @@ resource "aws_route" "internet_ip6" {
 
 resource "aws_route" "local" {
     route_table_id =  aws_route_table.tf_rt_tbl.id
-    destination_cidr_block = "192.168.1.0/22"
+    destination_cidr_block = "192.168.0.0/22"
     gateway_id = "local"
 }
 
