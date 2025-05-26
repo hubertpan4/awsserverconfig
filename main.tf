@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-    ami = ""
+    ami = "ami-05a3e0187917e3e24"
     instance_type = "t4g.small"
     tags = {
         Name = "exampleInstance"
