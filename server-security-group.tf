@@ -19,7 +19,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_server_egress_ipv6" {
 resource "aws_vpc_security_group_ingress_rule" "allow_server_tcp_8080_from_subnet" {
     security_group_id = aws_security_group.server.id
     cidr_ipv4 = aws_vpc.tf_vpc.cidr_block
-    from_port = -1
+    from_port = 8080
     ip_protocol = "tcp"
     to_port = 8080
 }
