@@ -16,6 +16,7 @@ resource "aws_subnet" "subnet_a" {
     vpc_id = aws_vpc.tf_vpc.id 
     cidr_block= "192.168.1.0/24"
     availability_zone="us-east-2a"
+    assign_ipv6_address_on_creation=true
 }
 
 resource "aws_subnet" "subnet_b" {
