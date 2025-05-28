@@ -40,12 +40,6 @@ resource "aws_route" "internet_ip6" {
     gateway_id = aws_internet_gateway.tf_vpc_gw.id
 }
 
-resource "aws_route" "local" {
-    route_table_id =  aws_route_table.tf_rt_tbl.id
-    destination_cidr_block = "192.168.0.0/22"
-    gateway_id = "local"
-}
-
 resource "aws_vpc_endpoint" "s3" {
     vpc_id = aws_vpc.tf_vpc.id
     vpc_endpoint_type="Gateway"
