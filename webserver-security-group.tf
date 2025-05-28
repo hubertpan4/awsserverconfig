@@ -24,10 +24,10 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tcp_8080_from_subnet" {
     to_port = 8080
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_tcp_8080_from_subnet" {
+resource "aws_vpc_security_group_ingress_rule" "allow_tcp_443_from_ipv6_internet" {
     security_group_id = aws_security_group.webserver.id
-    cidr_ipv4 = aws_vpc.tf_vpc.cidr_block
+    cidr_ipv6 = "::/0"
     from_port = -1
     ip_protocol = "tcp"
-    to_port = 8080
+    to_port = 443
 }
