@@ -1,6 +1,9 @@
 resource "aws_vpc" "tf_vpc" {
     cidr_block="192.168.0.0/16"
     assign_generated_ipv6_cidr_block = true
+    tags = {
+        Name = "tf_vpc"
+    }
 
 }
 
