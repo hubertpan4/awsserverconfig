@@ -26,6 +26,14 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tcp_8080_from_subnet" {
 }
 */
 
+resource "aws_vpc_security_group_ingress_rule" "allow_tcp_80_from_ipv6_internet" {
+    security_group_id = aws_security_group.webserver.id
+    cidr_ipv6 = "::/0"
+    from_port = 80
+    ip_protocol = "tcp"
+    to_port = 80
+}
+
 resource "aws_vpc_security_group_ingress_rule" "allow_tcp_443_from_ipv6_internet" {
     security_group_id = aws_security_group.webserver.id
     cidr_ipv6 = "::/0"
