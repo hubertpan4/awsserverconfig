@@ -30,6 +30,9 @@ resource "aws_subnet" "subnet_b" {
 
 resource "aws_route_table" "tf_rt_tbl" {
     vpc_id = aws_vpc.tf_vpc.id
+    tags = {
+        Name = "tf_rt_tbl"
+    }
 }
 
 resource "aws_route" "internet_ip4" {
