@@ -47,18 +47,12 @@ resource "aws_route" "internet_ip4" {
     route_table_id =  aws_route_table.tf_rt_tbl.id
     destination_cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.tf_vpc_gw.id
-    tags = {
-        Name = "internet_ip4"
-    }
 }
 
 resource "aws_route" "internet_ip6" {
     route_table_id =  aws_route_table.tf_rt_tbl.id
     destination_ipv6_cidr_block = "::/0"
     gateway_id = aws_internet_gateway.tf_vpc_gw.id
-    tags = {
-        Name = "internet_ip6"
-    }
 }
 
 resource "aws_vpc_endpoint" "s3" {
@@ -73,15 +67,9 @@ resource "aws_vpc_endpoint" "s3" {
 resource "aws_route_table_association" "subnet_a_tf_rt_tbl" {
     subnet_id = aws_subnet.subnet_a.id
     route_table_id = aws_route_table.tf_rt_tbl.id
-    tags = {
-        Name = "subnet_a_tf_rt_tbl_assoc"
-    }
 }
 
 resource "aws_route_table_association" "subnet_b_tf_rt_tbl" {
     subnet_id = aws_subnet.subnet_b.id
     route_table_id = aws_route_table.tf_rt_tbl.id
-    tags = {
-        Name = "subnet_b_tf_rt_tbl_assoc"
-    }
 }
