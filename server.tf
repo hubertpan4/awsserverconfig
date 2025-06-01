@@ -9,7 +9,7 @@ data "aws_ami" "aws_linux" {
 
     filter {
         name = "name"
-        values = ["al2023-ami-2023.6*"]
+        values = ["al2023-ami-2023.*"]
     }
 
 }
