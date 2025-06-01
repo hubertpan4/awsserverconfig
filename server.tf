@@ -21,4 +21,5 @@ resource "aws_instance" "app_server" {
         Name = "exampleInstance"
     }
     vpc_security_group_ids = [aws_security_group.webserver.id]
+    subnet_id = aws_subnet.subnet_a.id
 }
