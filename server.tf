@@ -20,4 +20,5 @@ resource "aws_instance" "app_server" {
     tags = {
         Name = "exampleInstance"
     }
+    vpc_security_group_ids = [aws_security_group.webserver.id]
 }
