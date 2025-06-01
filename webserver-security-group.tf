@@ -20,7 +20,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tcp_8080_from_subnet" {
     security_group_id = aws_security_group.webserver.id
     cidr_ipv4 = aws_vpc.tf_vpc.cidr_block
     from_port = 8080
-    ip_protocol = -1
+    ip_protocol = "tcp"
     to_port = 8080
 }
 
