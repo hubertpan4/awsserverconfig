@@ -38,5 +38,6 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh_from_ipv6_internet" {
     security_group_id = aws_security_group.webserver.id
     cidr_ipv6 = "::/0"
     from_port = 22
+    ip_protocol = "tcp"
     to_port = 22
 }
