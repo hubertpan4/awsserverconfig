@@ -28,9 +28,8 @@ resource "aws_subnet" "subnet_a" {
 resource "aws_subnet" "subnet_b" {
     vpc_id = aws_vpc.tf_vpc.id 
     cidr_block= "192.168.2.0/24"
-    ipv6_cidr_block = cidrsubnet(aws_vpc.tf_vpc.ipv6_cidr_block,8,2) 
     availability_zone="us-east-2b"
-    assign_ipv6_address_on_creation=true
+    assign_ipv6_address_on_creation = false
     tags = {
         Name = "tf_subnet_b"
     }
