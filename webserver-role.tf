@@ -1,10 +1,6 @@
 resource "aws_iam_role" "webserver_role" {
     name = "tf_webserver_role"
-    managed_policy_arns = [
-        aws_iam_policy.reads3.arn, 
-        aws_iam_policy.writeMetrics.arn
-        ]
-        assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
+    assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
 }
 
 
@@ -12,10 +8,20 @@ resource "aws_iam_role" "webserver_role" {
 data "aws_iam_policy_document" "instance_assume_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
-
+    effect="Allow"
     principals {
       type        = "Service"
       identifiers = ["ec2.amazonaws.com"]
     }
   }
+}
+
+resource "aws_iam_role_policy_attachment" "attach_reads3" {
+  role       = aws_iam_role.webserver_role.name
+  policy_arn = aws_iam_policy.reads3.arn
+}
+
+resource "aws_iam_role_policy_attachment" "attach_writeMetrics" {
+  role       = aws_iam_role.webserver_role.name
+  policy_arn = aws_iam_policy.writeMetrics.arn
 }
