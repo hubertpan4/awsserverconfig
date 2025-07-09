@@ -21,6 +21,7 @@ resource "aws_instance" "app_server" {
         Name = "exampleInstance"
     }
     vpc_security_group_ids = [aws_security_group.webserver.id]
+    iam_instance_profile = aws_iam_instance_profile.webserver_instance_profile.name
     subnet_id = aws_subnet.subnet_a.id
     user_data_replace_on_change = true
     user_data = file("webserver-setup.sh")
