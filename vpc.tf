@@ -54,15 +54,6 @@ resource "aws_route" "internet_ip6" {
     gateway_id = aws_internet_gateway.tf_vpc_gw.id
 }
 
-resource "aws_vpc_endpoint" "s3" {
-    vpc_id = aws_vpc.tf_vpc.id
-    vpc_endpoint_type="Gateway"
-    service_name="com.amazonaws.us-east-2.s3"
-    tags = {
-        Name = "s3_gateway"
-    }
-}
-
 resource "aws_route_table_association" "subnet_a_tf_rt_tbl" {
     subnet_id = aws_subnet.subnet_a.id
     route_table_id = aws_route_table.tf_rt_tbl.id
