@@ -11,7 +11,10 @@ resource "aws_iam_policy" "reads3" {
                     "s3:ListBucket"
                 ]
                 Effect = "Allow"
-                Resource = "${aws_s3_bucket.code-bucket.arn}/*"
+                Resource = [
+                    "${aws_s3_bucket.code-bucket.arn}/*",
+                    aws_s3_bucket.code-bucket.arn
+                ]
             }
         ]
     })
