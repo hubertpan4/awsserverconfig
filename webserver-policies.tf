@@ -11,7 +11,7 @@ resource "aws_iam_policy" "reads3" {
                     "s3:ListBucket"
                 ]
                 Effect = "Allow"
-                Resource = "arn:aws:s3:::com.icarusfrog.us.east.2.code.bucket/*"
+                Resource = "${aws_s3_bucket.code-bucket.arn}/*"
             }
         ]
     })
@@ -20,7 +20,7 @@ resource "aws_iam_policy" "reads3" {
 resource "aws_iam_policy" "writeMetrics" {
     name = "writeMetrics"
     path = "/"
-    description = "reads3 policy"
+    description = "write metrics policy"
     policy = jsonencode({
         Version = "2012-10-17"
         Statement = [
