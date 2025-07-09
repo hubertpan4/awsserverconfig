@@ -7,6 +7,7 @@ echo "Attempting to list S3 bucket: com.icarusfrog.us.east.2.code.bucket" >> /va
 aws s3 ls s3://com.icarusfrog.us.east.2.code.bucket/ >> /var/log/cloud-init-output.log 2>&1
 aws s3 cp s3://com.icarusfrog.us.east.2.code.bucket/aws-demo-0.0.1-SNAPSHOT.jar bob.jar
 # wget https://github.com/hubertpan3/aws-demo/releases/download/0.0.1/aws-demo-0.0.1-SNAPSHOT.jar
+# aws s3 cp s3://com.icarusfrog.test/aws-demo-0.0.1-SNAPSHOT.jar bob.jar --debug --endpoint-url http://s3.dualstack.us-east-2.amazonaws.com/
 # java -jar aws-demo-0.0.1-SNAPSHOT.jar
 # sudo yum install nginx
 # sudo systemctl start nginx
