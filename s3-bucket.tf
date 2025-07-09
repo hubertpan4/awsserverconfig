@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "code-bucket" {
 }
 
 resource "aws_s3_object" "object" {
-  bucket = "com.icarusfrog.us.east.2.code.bucket"
+  bucket = aws_s3_bucket.code-bucket.bucket
   key    = "aws-demo-0.0.1-SNAPSHOT.jar"
   source = "aws-demo-0.0.1-SNAPSHOT.jar"
 
