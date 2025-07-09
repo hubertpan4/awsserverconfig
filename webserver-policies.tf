@@ -11,7 +11,7 @@ resource "aws_iam_policy" "reads3" {
                     "s3:ListBucket"
                 ]
                 Effect = "Allow"
-                Resource = "arn:aws:s3:::com.icarusfrog.test/*"
+                Resource = "arn:aws:s3:::com.icarusfrog.us.east.2.code.bucket/*"
             }
         ]
     })
