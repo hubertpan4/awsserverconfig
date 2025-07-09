@@ -4,7 +4,7 @@ resource "aws_iam_role" "webserver_role" {
         aws_iam_policy.reads3.arn, 
         aws_iam_policy.writeMetrics.arn
         ]
-        assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.jso
+        assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
 }
 
 
