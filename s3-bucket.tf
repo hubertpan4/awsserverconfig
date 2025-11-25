@@ -1,6 +1,10 @@
 resource "aws_s3_bucket" "code-bucket" {
-   bucket = "com.icarusfrog.us.east.2.code.bucket"
-   acl = "private"  
+   bucket = "com.icarusfrog.us.east.2.code.bucket" 
+}
+
+resource "aws_s3_bucket_acl" "code-bucket-acl" {
+  bucket = aws_s3_bucket.code-bucket.id
+  acl = "private"
 }
 
 resource "aws_s3_object" "object" {
