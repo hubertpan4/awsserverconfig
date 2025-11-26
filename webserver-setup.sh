@@ -15,3 +15,4 @@ java -jar bob.jar -Dspring.profiles.active=aws >> bob.txt
 # java -jar aws-demo-0.0.1-SNAPSHOT.jar
 # sudo yum install nginx
 # sudo systemctl start nginx
+sudo yum install -y python3-pip
